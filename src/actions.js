@@ -3,9 +3,19 @@ import * as actions from './actionTypes'
 export const bugAdded = description => ({
    type: actions.BUG_ADDED,
    payload: {
-      description:'bug1'
+      description
    }
 })
+//exersise solution 
+
+export const bugResolved = (id) => ({
+   type: actions.BUG_RESOLVED,
+   payload: {
+      id
+   }
+})
+
+
 
 //another way of actions creator function 
 // export function bugAdded(description) {
