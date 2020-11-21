@@ -1,23 +1,18 @@
 import store from './store'
-import * as actions from './actionTypes'
 
+import {bugAdded} from './actions.js'
 // const unsubscribe =store.subscribe(() => {
 //    console.log('store changed',store.getState());
 // })
 
-store.dispatch({
-   type: actions.BUG_ADDED,
-   payload: {
-      description:'bug1'
-   }
-})
+store.dispatch(bugAdded('bug1'))
 // unsubscribe()
-store.dispatch({
-   type: actions.BUG_REMOVED,
-   payload: {
-      id:1
-   }
-}) 
+// store.dispatch({
+//    type: actions.BUG_REMOVED,
+//    payload: {
+//       id:1
+//    }
+// }) 
 
 console.log(store.getState());
 
