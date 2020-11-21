@@ -1,18 +1,19 @@
 import store from './store'
+import * as actions from './actionTypes'
 
-const unsubscribe =store.subscribe(() => {
-   console.log('store changed',store.getState());
-})
+// const unsubscribe =store.subscribe(() => {
+//    console.log('store changed',store.getState());
+// })
 
 store.dispatch({
-   type: 'bugAdded',
+   type: actions.BUG_ADDED,
    payload: {
       description:'bug1'
    }
 })
-unsubscribe()
+// unsubscribe()
 store.dispatch({
-   type: 'bugRemoved',
+   type: actions.BUG_REMOVED,
    payload: {
       id:1
    }
@@ -20,24 +21,3 @@ store.dispatch({
 
 console.log(store.getState());
 
-// console.log(store.getState());
-
-
-
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
-// // If you want to start measuring performance in your app, pass a function
-// // to log results (for example: reportWebVitals(console.log))
-// // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
